@@ -12,9 +12,6 @@
       font:20px
     }
     </style>
-    <div class="newline">
-        white-space: pre-line;
-    </div>
 </head>
 
 <html lang="en">
@@ -165,11 +162,12 @@
                     </div>
                     <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Assignment 1: Analyzing the Design of a Garbage Compactor</h2>
                     <p class="lead mb-5"><img class="img-fluid" src="assets/img/portfolio/Image4.jpg" alt="..." /> </p>
-                    <p class="lead mb-5"><b>Purpose: </b>The main purpose of this garbage compactor is to sense when the garbage can is almost full and try to compact the waste 
+                    <h3 class="mb-0">Purpose</h3>
+                    <p class="lead mb-5">The main purpose of this garbage compactor is to sense when the garbage can is almost full and try to compact the waste 
                     using solar powered energy,  which in turn will increase the bin’s capacity. 
                     However, there are design flaws that will be addressed in this assignment.</p>
-                    <p class="lead mb-5"><b>Problem Statement: </b></p>
                     
+                    <h3 class="mb-0">Problem Statement</h3>
                     <ul style="padding-left:40px">
                         <li class="lead mb-5"> One problem of this garbage compactor is the problem of overflow, meaning, when the garbage compactor is at its maximum capacity, 
                             even after the waste is compressed, civilians still try to squeeze in the trash, 
@@ -178,11 +176,13 @@
                         <li class="lead mb-5"> Another problem is that snow or other objects can cover the solar panels, 
                             which ultimately makes the garbage compactor less effective than the ideal scenario of utilizing renewable energy.</li>
                     </ul>
-                    <p class="lead mb-5"> <b>Solution to Overflow<br><br></b>One solution is to have a lock mechanism that will lock the garbage bin using a linear actuator when the sensors detect that the garbage bin 
+                    <h3 class="mb-0">Solution to Overflow</h3>
+                    <p class="lead mb-5">One solution is to have a lock mechanism that will lock the garbage bin using a linear actuator when the sensors detect that the garbage bin 
                         is at maximum capacity. The following sketch is a design solution that solve the overflow problem.
                         <img class="img-fluid" src="assets/img/portfolio/Image1.jpg" alt="..." />
                         <img class="img-fluid" src="assets/img/portfolio/Image2.jpg" alt="..." /></p>
-                    <p class="lead mb-5"> <b>Solution to Covered Solar Panels<br><br></b>There are different scenarios to how the solar panels are covered, either by an object placed by civilians over 
+                        <h3 class="mb-0">Solution to Covered Solar Panels</h3>
+                    <p class="lead mb-5"> There are different scenarios to how the solar panels are covered, either by an object placed by civilians over 
                         the solar panels or by snow being piled up over the solar panels as seen in the above images.<br><br>
                         For both scenarios, a supplementary battery that stores and holds energy can solve this problem. In the case of an object covering the solar panels, the supplementary battery can be 
                         used to compact the waste rather than relying on the solar panels. In the case of snow, the supplementary battery can be connected to a heating device that melts aways the piled-up snow. 
@@ -211,8 +211,10 @@
                             <p><a href="assets/img/portfolio/skateboard_drawing.pdf">SkateboardDeck_CAD_Drawing</a></p>
                             <p><a href="assets/img/portfolio/ME360_A2_Skateboard.eprt">ME360_A2_Skateboard.eprt</a></p>
 
+
+
                         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Assignment 3: Autonomous Chessboard</h2>
-                        <img class="img-fluid" src="assets/img/portfolio/image8.jpg" alt="..." />
+                        <p class="lead mb-5"><img class="img-fluid" src="assets/img/portfolio/image8.jpg" alt="..." /></p>
                         <h3 class="mb-0">Assignment Objectives</h3>
                         <p class="lead mb-5"> The main assignment objective was to design a robot that has 2.5 degrees of freedom. As a team, we decided to create a chessboard that enabled a user to play chess against a computer on a physical board rather than using an application.
                             The basic functionality of the chessboard is by using stepper motors and a belt to move the end effector in the X and Y directions. The end effector is a rack and pinion system that holds a magnet, which enables the end effector to attract a chess piece when extended. 
@@ -231,8 +233,27 @@
                             <li>One Arduino MEGA</li>
                           </ul>
                         </p>
+
+                        <p class="lead mb-5">The following image is the CAD model for the end-effector. The end-effector is based on a rack and pinion system on which the magnet is held.
+                            The basic idea of this model is that a smaller stepper motor is connected to the rack and when the motor rotates, it also rotates the rack. This rotation of the rack 
+                            will subsequently linearly move the pinion on which the magnet resides. Through this motion, we were able to move the magnet up and down in order to attract a specific piece 
+                            and move it around on the chessboard.
+                            <img class="img-fluid" src="assets/img/portfolio/image26.jpg" alt="..." /> 
+                        </p>
+                        <p class="lead mb-5">The following image is the CAD model for the pulley-slider mechanism. This model is responsible for tensioning the belts, which is essential 
+                            in moving the end-effector in the X and Y directions. This model has two slots; one end of the belt is passed through one slot and then wrapped around the relevant extrusion bar
+                            and the other end of the belt is pushed through the other slot. Moreover, one slot is angled so that the belt could be tensioned simply by pulling on the belt. In order to keep the belt
+                            in place, two screws were used to clamp the belt ends to pulley-slider.
+                            <img class="img-fluid" src="assets/img/portfolio/image25.jpg" alt="..." /> 
+                        </p>
+                        <p class="lead mb-5">The following image shows the assembly model of the whole mechanical part of the autonomous chessboard. It should be noted that other components were also 
+                            modeled, such as brackets connecting the motor or pulley to the extrusions. These models can be seen in the image below. Once these designs were complete, we, then, 3D printed 
+                            all these parts to construct the autonomous chessboard.
+                            <img class="img-fluid" src="assets/img/portfolio/image27.jpg" alt="..." /> 
+                        </p>
+
                         
-                        <h3 class="mb-0">Code Implementation</h3>
+                        <h3 class="mb-0">Code and Controls Implementation</h3>
                         <p class="lead mb-5">For the coding element of this assignment, an Ardunio script and a Python script were used to control the autonomous chessboard.             
                          The python script included a stockfish library that enabled python to send moves to Stockfish, a free and open source chess-engine, and recieves the stockfish's best move. 
                         These moves were send to the arduino IDE, which then decides how much to move in the x,y directions and if the end-effector should be 
@@ -240,6 +261,29 @@
                         The input for the moves should be entered by the user on the computer. The code for this assignment can be found on  <a href="https://github.com/abingeorge07/autonomousChess">GitHub</a>.  The following flowchart shows the basic structure of how the code is working.
                         <img class="img-fluid" src="assets/img/portfolio/image10.jpg" alt="..." /> </p>
 
+                        <h3 class="mb-0">Testing Phase</h3>
+                        <p class="lead mb-5">The following are some videos of us testing out the controls of the autonomous chessboard.
+                            It should be noted that there were many roadblocks we faced as a team and we collaboratively came up with solutions to overcome these roadblocks.
+                        </p>
+                        <video width="180" height="700"  controls muted>
+                            <source src="assets/img/portfolio/vid8.mp4" type="video/mp4">
+                            <!-- <source src="assets/img/portfolio/vid1.mp4.mov" type="video/mov"> -->
+                          Your browser does not support the video tag.
+                        </video> 
+                        <p><br></p>
+                        <video width="180" height="700"  controls muted>
+                            <source src="assets/img/portfolio/vid11.mp4" type="video/mp4">
+                            <!-- <source src="assets/img/portfolio/vid1.mp4.mov" type="video/mov"> -->
+                          Your browser does not support the video tag.
+                        </video> 
+                        <p><br></p>
+                        <video width="180" height="700"  controls muted>
+                            <source src="assets/img/portfolio/vid9.mp4" type="video/mp4">
+                            <!-- <source src="assets/img/portfolio/vid1.mp4.mov" type="video/mov"> -->
+                          Your browser does not support the video tag.
+                        </video> 
+
+                        <p><br><br></p>
                         <h3 class="mb-0">Future Improvements</h3>
                         <p class="lead mb-5">The following improvements could be made to further improve the product.</p>
                         <ul class="b">
@@ -249,13 +293,20 @@
                           </ul>
                         </p>
                         <h3 class="mb-0">Chessboard in Action</h3>
-                        <p class="lead mb-5">The following video shows the autonomous chessboard functioning and playing with a user (Miguel Ianus-Valdivia).</p>
+                        <p class="lead mb-5">The following videos show some of the autonomous chessboard's functionality, while playing with a user (Miguel Ianus-Valdivia).</p>
                         
-                        <video width="180" height="700" controls>
+                        <video width="180" height="700"  controls>
                             <source src="assets/img/portfolio/vid1.mp4.mp4" type="video/mp4">
                             <!-- <source src="assets/img/portfolio/vid1.mp4.mov" type="video/mov"> -->
                           Your browser does not support the video tag.
                         </video> 
+                        <p><br></p>
+                        <video width="180" height="700"  controls muted>
+                            <source src="assets/img/portfolio/vid12.mp4" type="video/mp4">
+                            <!-- <source src="assets/img/portfolio/vid1.mp4.mov" type="video/mov"> -->
+                          Your browser does not support the video tag.
+                        </video> 
+                        <p><br><br></p>
                         <h3 class="mb-0">Teammates</h3>
                         <p class="lead mb-5"><a href="https://aamrit.wixsite.com/portfolio">Aayush Amrit</a><br><a href="https://sites.google.com/bu.edu/adambahlous-boldi/home">Adam Bahlous-Boldi</a><br><a href="http://kylefieleke.com/">Kyle Fieleke</a></p>
 
@@ -316,7 +367,7 @@
                         <!-- <source src="assets/img/portfolio/vid1.mp4.mov" type="video/mov"> -->
                       Your browser does not support the video tag.
                     </video> 
-
+                    <p><br><br></p>
                         
                           <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Exercise 1: Sketches from First Session</h2>
                           <h3 class="mb-0">Exercise Objectives</h3>
@@ -335,12 +386,43 @@
                             <h3 class="mb-0">Solution Sketches</h3>
                             <p class="lead mb-5">The following is a sketch of a solution to the above posed problem.
                             <img class="img-fluid-l" src="assets/img/portfolio/image12.jpg" alt="..." /></p>
+                            
+                            
+                            
                             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Exercise 2: Bell Design Using Finite Element Analysis</h2>
+                            <p class="lead mb-5"> <img class="img-fluid-l" src="assets/img/portfolio/image23.jpg" alt="..." /> </p>
+                            <h3 class="mb-0">Exercise Objectives</h3>
+                            <p class="lead mb-5"> 
+                                The goal of this exercise was to design a bell on CAD, then conduct a frequency simulation to find out the resonant frequencies of the bell. Finally, these resonant frequencies are used to predict the sound the bell would make using MATLAB.
+                            </p>
+                            <h3 class="mb-0">CAD Implementation</h3>
+                            <p class="lead mb-5">
+                                Using the image above, a sketch of the cross-section of the bell was made in Solidworks. Then this sketch was revolved around the centerline axis to create a 3D model of the bell. The following image shows the 3D model of the bell created in Solidworks.
+                             <img class="img-fluid" src="assets/img/portfolio/image22.jpg" alt="..." /> </p>
+                            
+                             <h3 class="mb-0">Frequency Study</h3> 
+                             <p class="lead mb-5">Before starting the frequency study, a split line was created on the top plane of the bell. This was done so that in the frequency study a small force can be applied to the split plane of the bell to simulate the bell being hung by a rope.
+                                Moreover, it should be noted that the material of the bell was chosen to be "commercial broze," this was done since most bells are made out of bronze.
+                                Once this was done, a new frequency study was created with the number of frequencies set to 10. Then, the fixtures on the bell was created by applying a force on the split plane created earlier; this essentially simulates the bell being hung.
+                                The last step was to create the mesh and finally run the simulation. The following image shows 1 of the 10 frequency modes.
+                                <img class="img-fluid" src="assets/img/portfolio/image24.jpg" alt="..." />
+                            </p>
+
+                            <h3 class="mb-0">MATLAB Implementation</h3> 
+                            <p class="lead mb-5">Using the 10 frequencies found from the frequency study done in Solidworks, a simulated sound of the bell was created in MATLAB. The MATLAB code can be found on <a href="https://github.com/abingeorge07/ME360_Bell">GitHub</a>.
+                                The following is the simulated sound of the bell determined using the MATLAB code.
+                            </p>
+                            <audio width ="200" height="10" controls>
+                                <source src="assets/img/portfolio/BellSound.wav" type="audio/wav">
+                            </audio>
+
+                            <p><br><br></p>
                             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Exercise 3: In Class Plotter Exercise</h2>
                             <h3 class="mb-0">Exercise Objectives</h3>
                             <p class="lead mb-5">The goal of this exercise was to design 2.5 DOF robot that can draw a square. Each team was tasked to create one of the linear stages purely using foamboard, glue, few bearings and a linear actuator which consists
-                                of a stepper motor, and a screw attached to it. Once this was done, 3 teams were to combine all the linear stages together to build the 2.5 DOF robot which was then programmed to draw a square using G-code.<br>
-                                My team was tasked with creating one of the X-direction linear stage. For the first step, we first created a base using the foamboard, then we created a carriage  
+                                of a stepper motor, and a screw attached to it. Once this was done, 3 teams were to combine all the linear stages together to build the 2.5 DOF robot which was then programmed to draw a square using G-code.</p>
+                                <h3 class="mb-0">Workflow</h3>    
+                            <p class="lead mb-5">    My team was tasked with creating one of the X-direction linear stage. For the first step, we first created a base using the foamboard, then we created a carriage  
                                 on which the Y-direction linear stage will be placed on. Finally, we created one more foamboard design that holds the end of the screw of the linear actuator. 
                                 Once this was done, we combined our linear stage with that of two other teams. One other team built the other X-direction linear stage and the other team created a 
                                 Y-direction linear stage that also carries another smaller stepper motor that holds a marker, which can linearly move the pen upwards or downwarads. Finally, few simple lines
@@ -352,6 +434,9 @@
                                 <!-- <source src="assets/img/portfolio/vid1.mp4.mov" type="video/mov"> -->
                               Your browser does not support the video tag.
                             </video> 
+                            <p><br><br></p>
+                            
+                            
                             <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Exercise 4: 4-Bar Tutorial</h2>
                             <h3 class="mb-0">Exercise Objectives</h3>
                             <p class="lead mb-5">The goal of this exercise was to get accustomed to using the motion analysis toolbox in order
