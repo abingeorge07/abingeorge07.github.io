@@ -681,23 +681,40 @@ progress {
 }
 
 .img-fluid {
+  display: block;
   max-width: 100%;
   height: auto;
-  scale: 70%
+  scale: 65%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .img-fluid-l {
+  display: block;
   max-width: 100%;
   height: auto;
-  scale: 90%
+  scale: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  /* display: block;   */
+  
 }
 
 .img-fluid-small {
+  /* display: block;
   padding: 0px;
   margin-top: -10rem;
   max-width: 60%;
   height: auto;
-  scale: 60%
+  scale: 60%;
+  margin-left: auto;
+  margin-right: auto; */
+  display: block;
+  max-width: 100%;
+  height: auto;
+  scale: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .img-fluid-verysmall {
   /* display: inline-block;
