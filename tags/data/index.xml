@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Data on Carl Müller-Crepon</title>
+    <link>/tags/data/</link>
+    <description>Recent content in Data on Carl Müller-Crepon</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Nov 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/data/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>State Reach in Africa</title>
+      <link>/project/statecap_data/</link>
+      <pubDate>Wed, 10 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/project/statecap_data/</guid>
+      <description>Spatial state reach data for African states since independence, based on travel times to national and regional capitals</description>
+    </item>
+    
+    <item>
+      <title>Linking Ethnic Data from Africa (LEDA)</title>
+      <link>/project/ethnic_matching/</link>
+      <pubDate>Thu, 09 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/project/ethnic_matching/</guid>
+      <description>We interlink 11 ethnic datasets from Africa via the language tree.</description>
+    </item>
+    
+    <item>
+      <title>Spatially Interpolated Data on Ethnicity</title>
+      <link>/project/side_data/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/project/side_data/</guid>
+      <description>Collection of 253 near-continuous maps of local ethno-linguistic, religious, and ethno-religious settlement patterns in 47 countries.</description>
+    </item>
+    
+    <item>
+      <title>Regions in independent Africa</title>
+      <link>/project/admin_unit_data/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/project/admin_unit_data/</guid>
+      <description>Collection of GIS data on 1st level administrative units, independence - today.</description>
+    </item>
+    
+    <item>
+      <title>African road network data</title>
+      <link>/project/road_data/</link>
+      <pubDate>Fri, 01 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/project/road_data/</guid>
+      <description>Time-varying GIS data on road networks from the Michelin map corpus 1966-2017.</description>
+    </item>
+    
+  </channel>
+</rss>
