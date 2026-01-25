@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photography — Abin Binoy George</title>
+  <link rel="stylesheet" href="/css/academic.min.9e57530457aca7cbf2be8a0115b2dca9.css">
+  <link rel="stylesheet" href="/css/academic.97f39ccbd0e296aa78ab2b3b93e9a354.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+  <style>
+    /* Instagram-like appearance */
+    body { background: #fff; }
+    .page-container { max-width: 935px; margin: 26px auto; padding: 0 12px; }
+    .ig-header { display:flex; align-items:center; gap:12px; padding:12px 6px; border-bottom:1px solid #e6e6e6; }
+    .ig-avatar { width:56px; height:56px; border-radius:50%; overflow:hidden; flex:0 0 56px; }
+    .ig-avatar img { width:100%; height:100%; object-fit:cover; }
+    .ig-meta { display:flex; flex-direction:column; }
+    .ig-username { font-weight:700; letter-spacing:.02em; }
+    .ig-follow { margin-left:auto; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: #fff;
+    }
+
+    .photo-card { position:relative; width:100%; padding-top:100%; overflow:hidden; }
+    .photo-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+
+    /* overlay shown on hover */
+    .overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; background:rgba(0,0,0,0.32); opacity:0; transition:opacity .12s ease; }
+    .overlay .meta { display:flex; gap:14px; align-items:center; font-size:14px; font-weight:600; }
+    .photo-card:hover .overlay, .photo-card:focus-within .overlay { opacity:1; }
+
+    h1 { margin:12px 0 6px; font-size:20px; }
+    .lead { color:#6a6262; margin-bottom:12px; }
+    .back-link { text-align:center; margin-top:22px; }
+
+    @media (min-width:1000px){ .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width:1300px){ .photo-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width:640px){ .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width:420px){ .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <div class="ig-header">
+      <div class="ig-avatar"><img src="/img/icon-192.png" alt="avatar"></div>
+      <div class="ig-meta">
+        <div class="ig-username">abinbinoygeorge</div>
+        <div class="ig-bio">Photography • Moments • Projects</div>
+      </div>
+      <div class="ig-follow"><button class="btn btn-outline-primary">Follow</button></div>
+    </div>
+
+    <h1>Photography</h1>
+    <p class="lead">Tap a square to view — like an Instagram grid.</p>
+
+    <div class="photo-grid">
+      <div class="photo-card">
+        <a href="/img/ME460/460-group.jpg" data-fancybox="gallery" data-caption="Group photo">
+          <img src="/img/ME460/460-group.jpg" alt="Group photo" loading="lazy">
+          <div class="overlay" aria-hidden="true">
+            <div class="meta"><span><i class="fas fa-heart"></i> 128</span><span><i class="fas fa-comment"></i> 12</span></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="photo-card">
+        <a href="/img/mis/work-in-progress.jpg" data-fancybox="gallery" data-caption="Work in progress">
+          <img src="/img/mis/work-in-progress.jpg" alt="Work in progress" loading="lazy">
+          <div class="overlay" aria-hidden="true">
+            <div class="meta"><span><i class="fas fa-heart"></i> 64</span><span><i class="fas fa-comment"></i> 8</span></div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="back-link">
+      <a href="/">← Back to home</a>
+    </div>
+  </div>
+
+  <!-- jQuery + Fancybox (from site defaults) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+  <script>
+    // Initialize Fancybox with a centered zoom effect
+    $(function(){
+      $('[data-fancybox="gallery"]').fancybox({
+        loop: true,
+        animationEffect: 'zoom',
+        transitionEffect: 'zoom',
+        buttons: [
+          "zoom",
+          "fullScreen",
+          "slideShow",
+          "share",
+          "close"
+        ],
+        // slightly larger overlay on mobile
+        baseClass: 'fancybox-custom-ui'
+      });
+    });
+  </script>
+</body>
+</html>
