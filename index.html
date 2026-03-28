@@ -2,104 +2,30 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Source Themes Academic 4.3.1">
-
-  
-
-  
-  
-  
-  
-  
-    
-    
-    
-  
-  
-
   <meta name="author" content="Abin Binoy George">
-
-  
-  
-  
-    
-  
   <meta name="description" content="PhD Candidate">
-
-  
   <link rel="alternate" hreflang="en-us" href="/">
-
-  
-
-
-  
-
   
   
   
   <meta name="theme-color" content="#2962ff">
-  
-
-  
-  
-  
-  
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
-
-    
-    
-    
-      
-    
-    
-      
-      
         
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
-        
-      
-    
-
-    
-
-    
-
-  
-
-  
-  
+         
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
   
-
   
   
-  
-  <link rel="stylesheet" href="/css/academic.min.9e57530457aca7cbf2be8a0115b2dca9.css">
-
-  
-    
-    
-    
-    
-      
-    
-      
-    
-    
-    
+  <link rel="stylesheet" href="/css/academic.min.9e57530457aca7cbf2be8a0115b2dca9.css">  
     <link rel="stylesheet" href="/css/academic.97f39ccbd0e296aa78ab2b3b93e9a354.css">
-  
-
-  
-  
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
       ga('create', 'UA-142121844-2', 'auto');
@@ -110,7 +36,7 @@
       ga('send', 'pageview');
     </script>
     <script async src="//www.google-analytics.com/analytics.js"></script>
-    
+  
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
     
   
@@ -510,9 +436,75 @@
 
       </ul>
 
+        <!-- Night mode toggle button -->
+        <button id="night-mode-toggle" aria-label="Toggle night mode" style="margin-left: 1rem; background: none; border: none; cursor: pointer; font-size: 1.5rem;">
+          <i class="fas fa-moon"></i>
+        </button>
+
     </div>
   </div>
 </nav>
+  <script>
+    // Night mode logic
+    (function() {
+      const toggle = document.getElementById('night-mode-toggle');
+      const darkClass = 'night-mode';
+      // Check localStorage for saved mode
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add(darkClass);
+      }
+      toggle.addEventListener('click', function() {
+        document.body.classList.toggle(darkClass);
+        if (document.body.classList.contains(darkClass)) {
+          localStorage.setItem('theme', 'dark');
+        } else {
+          localStorage.setItem('theme', 'light');
+        }
+      });
+    })();
+  </script>
+
+  <style>
+    /* Night mode styles */
+    body.night-mode {
+      background: #181a1b !important;
+      color: #e0e0e0 !important;
+    }
+    body.night-mode a { color: #80cbc4; }
+    body.night-mode .navbar, body.night-mode .container, body.night-mode .card, body.night-mode .home-section {
+      background: #23272e !important;
+      color: #e0e0e0 !important;
+    }
+    body.night-mode .navbar-brand, body.night-mode .nav-link, body.night-mode h1, body.night-mode h2, body.night-mode h3, body.night-mode h4, body.night-mode h5, body.night-mode h6 {
+      color: #e0e0e0 !important;
+    }
+    body.night-mode .btn, body.night-mode .btn-outline-primary {
+      background: #23272e !important;
+      color: #80cbc4 !important;
+      border-color: #80cbc4 !important;
+    }
+    body.night-mode pre, body.night-mode code {
+      background: #282c34 !important;
+      color: #e0e0e0 !important;
+    }
+    body.night-mode .network-icon a {
+      color: #80cbc4 !important;
+    }
+    /* Add more selectors as needed for your site */
+    body.night-mode .ul-edu,
+    body.night-mode .ul-edu .description,
+    body.night-mode .ul-edu .course,
+    body.night-mode .ul-edu .institution {
+      background: transparent !important;
+      color: #e0e0e0 !important;
+    }
+    body.night-mode .fa-li.fas.fa-graduation-cap {
+      color: #80cbc4 !important;
+    }
+    body.night-mode .ul-edu li {
+      border-color: #444 !important;
+    }
+  </style>
 
 
 

@@ -1,110 +1,257 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Photography — Abin Binoy George</title>
-  <link rel="stylesheet" href="/css/academic.min.9e57530457aca7cbf2be8a0115b2dca9.css">
-  <link rel="stylesheet" href="/css/academic.97f39ccbd0e296aa78ab2b3b93e9a354.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
-  <style>
-    /* Instagram-like appearance */
-    body { background: #fff; }
-    .page-container { max-width: 935px; margin: 26px auto; padding: 0 12px; }
-    .ig-header { display:flex; align-items:center; gap:12px; padding:12px 6px; border-bottom:1px solid #e6e6e6; }
-    .ig-avatar { width:56px; height:56px; border-radius:50%; overflow:hidden; flex:0 0 56px; }
-    .ig-avatar img { width:100%; height:100%; object-fit:cover; }
-    .ig-meta { display:flex; flex-direction:column; }
-    .ig-username { font-weight:700; letter-spacing:.02em; }
-    .ig-follow { margin-left:auto; }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Photography — Abin Binoy George</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      background: #fff;
-    }
+    <style>
+        :root {
+            --bg-color: #fcfaf7; 
+            --text-main: #1a1a1a;
+            --accent: #888;
+        }
 
-    .photo-card { position:relative; width:100%; padding-top:100%; overflow:hidden; }
-    .photo-card img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+        body {
+            background: var(--bg-color);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            margin: 0;
+        }
 
-    /* overlay shown on hover */
-    .overlay { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:#fff; background:rgba(0,0,0,0.32); opacity:0; transition:opacity .12s ease; }
-    .overlay .meta { display:flex; gap:14px; align-items:center; font-size:14px; font-weight:600; }
-    .photo-card:hover .overlay, .photo-card:focus-within .overlay { opacity:1; }
+        .gallery-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
 
-    h1 { margin:12px 0 6px; font-size:20px; }
-    .lead { color:#6a6262; margin-bottom:12px; }
-    .back-link { text-align:center; margin-top:22px; }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            text-align: center;
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
 
-    @media (min-width:1000px){ .photo-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (min-width:1300px){ .photo-grid { grid-template-columns: repeat(4, 1fr); } }
-    @media (max-width:640px){ .photo-grid { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width:420px){ .photo-grid { grid-template-columns: repeat(3, 1fr); } }
-  </style>
+        .subtitle {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-bottom: 60px;
+        }
+
+        /* Masonry Grid */
+        .photo-grid {
+            column-count: 3;
+            column-gap: 20px;
+        }
+
+        @media (max-width: 900px) { .photo-grid { column-count: 2; } }
+        @media (max-width: 600px) { .photo-grid { column-count: 1; } }
+
+        .photo-card {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.02);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Overlay Styling for Fancybox */
+        .fancybox-bg {
+            background: rgba(10, 10, 10, 0.95) !important; /* Deep dark overlay */
+        }
+        
+        .fancybox-caption {
+            font-family: 'Playfair Display', serif;
+            background: none !important;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.8rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .back-link a:hover { border-bottom-color: var(--text-main); }
+    </style>
 </head>
 <body>
-  <div class="page-container">
-    <div class="ig-header">
-      <div class="ig-avatar"><img src="/img/icon-192.png" alt="avatar"></div>
-      <div class="ig-meta">
-        <div class="ig-username">abinbinoygeorge</div>
-        <div class="ig-bio">Photography • Moments • Projects</div>
-      </div>
-      <div class="ig-follow"><button class="btn btn-outline-primary">Follow</button></div>
+
+    <div class="gallery-container">
+        <h1>Gallery</h1>
+        <p class="subtitle">Selected Works</p>
+
+        <div class="photo-grid">
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0069.jpg" data-fancybox="gallery" data-caption="DSC_0069.jpg">
+                    <img src="/img/mis/DSC_0069.jpg" alt="DSC_0069.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0079.jpg" data-fancybox="gallery" data-caption="DSC_0079.jpg">
+                    <img src="/img/mis/DSC_0079.jpg" alt="DSC_0079.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0082.jpg" data-fancybox="gallery" data-caption="DSC_0082.jpg">
+                    <img src="/img/mis/DSC_0082.jpg" alt="DSC_0082.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0084.jpg" data-fancybox="gallery" data-caption="DSC_0084.jpg">
+                    <img src="/img/mis/DSC_0084.jpg" alt="DSC_0084.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0085.jpg" data-fancybox="gallery" data-caption="DSC_0085.jpg">
+                    <img src="/img/mis/DSC_0085.jpg" alt="DSC_0085.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0310.jpg" data-fancybox="gallery" data-caption="DSC_0310.jpg">
+                    <img src="/img/mis/DSC_0310.jpg" alt="DSC_0310.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0334.jpg" data-fancybox="gallery" data-caption="DSC_0334.jpg">
+                    <img src="/img/mis/DSC_0334.jpg" alt="DSC_0334.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0343.jpg" data-fancybox="gallery" data-caption="DSC_0343.jpg">
+                    <img src="/img/mis/DSC_0343.jpg" alt="DSC_0343.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0352.jpg" data-fancybox="gallery" data-caption="DSC_0352.jpg">
+                    <img src="/img/mis/DSC_0352.jpg" alt="DSC_0352.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0355.jpg" data-fancybox="gallery" data-caption="DSC_0355.jpg">
+                    <img src="/img/mis/DSC_0355.jpg" alt="DSC_0355.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0360.jpg" data-fancybox="gallery" data-caption="DSC_0360.jpg">
+                    <img src="/img/mis/DSC_0360.jpg" alt="DSC_0360.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0361.jpg" data-fancybox="gallery" data-caption="DSC_0361.jpg">
+                    <img src="/img/mis/DSC_0361.jpg" alt="DSC_0361.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0385.jpg" data-fancybox="gallery" data-caption="DSC_0385.jpg">
+                    <img src="/img/mis/DSC_0385.jpg" alt="DSC_0385.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0386.jpg" data-fancybox="gallery" data-caption="DSC_0386.jpg">
+                    <img src="/img/mis/DSC_0386.jpg" alt="DSC_0386.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0463.jpg" data-fancybox="gallery" data-caption="DSC_0463.jpg">
+                    <img src="/img/mis/DSC_0463.jpg" alt="DSC_0463.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0536.jpg" data-fancybox="gallery" data-caption="DSC_0536.jpg">
+                    <img src="/img/mis/DSC_0536.jpg" alt="DSC_0536.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0585.jpg" data-fancybox="gallery" data-caption="DSC_0585.jpg">
+                    <img src="/img/mis/DSC_0585.jpg" alt="DSC_0585.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0602.jpg" data-fancybox="gallery" data-caption="DSC_0602.jpg">
+                    <img src="/img/mis/DSC_0602.jpg" alt="DSC_0602.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0618.jpg" data-fancybox="gallery" data-caption="DSC_0618.jpg">
+                    <img src="/img/mis/DSC_0618.jpg" alt="DSC_0618.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0646.jpg" data-fancybox="gallery" data-caption="DSC_0646.jpg">
+                    <img src="/img/mis/DSC_0646.jpg" alt="DSC_0646.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0738.jpg" data-fancybox="gallery" data-caption="DSC_0738.jpg">
+                    <img src="/img/mis/DSC_0738.jpg" alt="DSC_0738.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0749.jpg" data-fancybox="gallery" data-caption="DSC_0749.jpg">
+                    <img src="/img/mis/DSC_0749.jpg" alt="DSC_0749.jpg" loading="lazy">
+                </a>
+            </div>
+            <div class="photo-card">
+                <a href="/img/mis/DSC_0768.jpg" data-fancybox="gallery" data-caption="DSC_0768.jpg">
+                    <img src="/img/mis/DSC_0768.jpg" alt="DSC_0768.jpg" loading="lazy">
+                </a>
+            </div>
+
+            </div>
+
+        <div class="back-link">
+            <a href="/">Return Home</a>
+        </div>
     </div>
 
-    <h1>Photography</h1>
-    <p class="lead">Tap a square to view — like an Instagram grid.</p>
-
-    <div class="photo-grid">
-      <div class="photo-card">
-        <a href="/img/ME460/460-group.jpg" data-fancybox="gallery" data-caption="Group photo">
-          <img src="/img/ME460/460-group.jpg" alt="Group photo" loading="lazy">
-          <div class="overlay" aria-hidden="true">
-            <div class="meta"><span><i class="fas fa-heart"></i> 128</span><span><i class="fas fa-comment"></i> 12</span></div>
-          </div>
-        </a>
-      </div>
-
-      <div class="photo-card">
-        <a href="/img/mis/work-in-progress.jpg" data-fancybox="gallery" data-caption="Work in progress">
-          <img src="/img/mis/work-in-progress.jpg" alt="Work in progress" loading="lazy">
-          <div class="overlay" aria-hidden="true">
-            <div class="meta"><span><i class="fas fa-heart"></i> 64</span><span><i class="fas fa-comment"></i> 8</span></div>
-          </div>
-        </a>
-      </div>
-
-    </div>
-
-    <div class="back-link">
-      <a href="/">← Back to home</a>
-    </div>
-  </div>
-
-  <!-- jQuery + Fancybox (from site defaults) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
-
-  <script>
-    // Initialize Fancybox with a centered zoom effect
-    $(function(){
-      $('[data-fancybox="gallery"]').fancybox({
-        loop: true,
-        animationEffect: 'zoom',
-        transitionEffect: 'zoom',
-        buttons: [
-          "zoom",
-          "fullScreen",
-          "slideShow",
-          "share",
-          "close"
-        ],
-        // slightly larger overlay on mobile
-        baseClass: 'fancybox-custom-ui'
-      });
-    });
-  </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    
+    <script>
+        $('[data-fancybox="gallery"]').fancybox({
+            buttons: [
+                "zoom",
+                "slideShow",
+                "fullScreen",
+                "close"
+            ],
+            animationEffect: "zoom-in-out",
+            transitionEffect: "fade",
+            overlayOpacity: 0.9
+        });
+    </script>
 </body>
 </html>
