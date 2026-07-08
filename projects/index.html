@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Abin Binoy George">
+  <meta name="description" content="Projects — Abin Binoy George">
+
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+  <link rel="canonical" href="/projects/">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9PQK6NZNY8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9PQK6NZNY8');
+  </script>
+
+  <title>Projects &mdash; Abin Binoy George</title>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text:   #1a1a1a;
+      --muted:  #666;
+      --faint:  #aaa;
+      --border: #e5e5e5;
+      --accent: #2563eb;
+      --bg:     #fff;
+      --bg-nav: rgba(255,255,255,0.95);
+      --max-w:  780px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { font-weight: 600; }
+
+    /* ─── Navbar ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-nav);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-nav {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0.7rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .site-nav__brand {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .site-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .site-nav__links a {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .site-nav__links a:hover { color: var(--accent); text-decoration: none; }
+    #theme-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 0.1rem 0.2rem;
+      line-height: 1;
+    }
+    #theme-btn:hover { color: var(--accent); }
+
+    /* ─── Layout ─── */
+    .site-main {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    .page-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--faint);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── Project grid ─── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ─── Project panel ─── */
+    .proj-panel {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .proj-panel--wide {
+      grid-column: 1 / -1;
+    }
+
+    .proj-panel__video {
+      background: #000;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+    .proj-panel__video video {
+      width: 100%;
+      max-height: 340px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .proj-panel__body {
+      padding: 1.1rem 1.25rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .proj-panel__title {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.15rem;
+    }
+    .proj-panel__meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+    .proj-panel__desc {
+      font-size: 0.87rem;
+      color: var(--text);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 0.75rem;
+    }
+    .proj-panel__tags {
+      font-size: 0.75rem;
+      color: var(--faint);
+      margin-bottom: 0.85rem;
+    }
+    .proj-panel__links {
+      display: flex;
+      gap: 0.55rem;
+      flex-wrap: wrap;
+    }
+    .proj-panel__links a {
+      font-size: 0.77rem;
+      padding: 0.1rem 0.5rem;
+      border: 1px solid var(--accent);
+      border-radius: 3px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    .proj-panel__links a:hover {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .subsection-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--faint);
+      margin: 2.5rem 0 1.25rem;
+    }
+
+    @media (max-width: 580px) {
+      .proj-grid { grid-template-columns: 1fr; }
+      .proj-panel--wide { grid-column: auto; }
+    }
+
+    /* ─── Footer ─── */
+    .site-footer {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--faint);
+      border-top: 1px solid var(--border);
+    }
+    .site-footer a { color: var(--faint); }
+    .site-footer a:hover { color: var(--accent); }
+
+    /* ─── Dark mode ─── */
+    body.dark {
+      --text:   #d4d4d4;
+      --muted:  #888;
+      --faint:  #555;
+      --border: #2a2a2a;
+      --accent: #60a5fa;
+      --bg:     #0f1117;
+      --bg-nav: rgba(15,17,23,0.95);
+    }
+
+    @media (max-width: 600px) {
+      .proj-list-item { flex-direction: column; gap: 0.3rem; }
+      .site-nav__links { gap: 0.8rem; }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="/" class="site-nav__brand">Abin Binoy George</a>
+      <ul class="site-nav__links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#news">News</a></li>
+        <li><a href="/#publications">Publications</a></li>
+        <li><a href="/projects/" style="color: var(--accent);">Projects</a></li>
+        <li><a href="/#teaching">Teaching</a></li>
+        <li>
+          <button id="theme-btn" aria-label="Toggle dark mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    <p class="page-title">Projects</p>
+
+    <!-- ─── Featured: Video Projects ─── -->
+    <!-- To add a new video project: copy a .proj-panel block below and paste it in the grid.
+         Use proj-panel--wide to span both columns, or omit for a half-width card. -->
+    <div class="proj-grid">
+
+      <div class="proj-panel proj-panel--wide">
+        <div class="proj-panel__video">
+          <video controls muted loop playsinline>
+            <source src="/img/ME460/systemRunning.MOV" type="video/mp4">
+          </video>
+        </div>
+        <div class="proj-panel__body">
+          <p class="proj-panel__title">Vehicular Laboratory Autonomous Device (VLAD)</p>
+          <p class="proj-panel__meta">Senior Design &middot; Boston University &middot; 2023</p>
+          <p class="proj-panel__desc">A modular lab automation robot built for Prof. Keith Brown's KABLab. VLAD navigates a lab space and interfaces with testing equipment autonomously, prioritizing spatial flexibility so it can adapt to different lab configurations and experiments.</p>
+          <p class="proj-panel__tags">Robotics &middot; Embedded Systems &middot; Mechanical Design</p>
+          <div class="proj-panel__links">
+            <a href="https://github.com/abingeorge07/ME461-Vehicular-Lab-Automation-Device/tree/main" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            <a href="/reports/ME460_FinalReport.pdf" target="_blank" rel="noopener">Report</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel proj-panel--wide">
+        <div class="proj-panel__video">
+          <video autoplay muted loop playsinline>
+            <source src="/A_Chess/assets/img/portfolio/vid12.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="proj-panel__body">
+          <p class="proj-panel__title">Autonomous Chessboard</p>
+          <p class="proj-panel__meta">Product Design &middot; Boston University &middot; 2022</p>
+          <p class="proj-panel__desc">A physical chessboard that plays against a human. Stepper motors and a belt drive move an end-effector in X/Y; a rack-and-pinion extends a magnet to lift iron-core pieces. Python + Stockfish computes moves and relays them over serial to an Arduino MEGA for motion control.</p>
+          <p class="proj-panel__tags">Robotics &middot; Arduino &middot; Python &middot; Mechanical Design</p>
+          <div class="proj-panel__links">
+            <a href="https://github.com/abingeorge07/autonomousChess" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            <a href="/A_Chess/">Project Page</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ─── Other Projects ─── -->
+    <!-- To add a new text-only project: copy a .proj-panel block below (no .proj-panel__video div needed). -->
+    <p class="subsection-label">Other Projects</p>
+
+    <div class="proj-grid">
+
+      <div class="proj-panel">
+        <div class="proj-panel__body">
+          <p class="proj-panel__title">Deep Reinforcement Learning for Robot Control</p>
+          <p class="proj-panel__meta">Graduate Research &middot; 2024</p>
+          <p class="proj-panel__desc">Custom 3-DOF robotic model in MuJoCo; trained SAC and DQN agents for adaptive locomotion and terrain-aware behavior.</p>
+          <p class="proj-panel__tags">Reinforcement Learning &middot; Robotics &middot; MuJoCo</p>
+          <div class="proj-panel__links">
+            <a href="https://github.com/abingeorge07" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel">
+        <div class="proj-panel__body">
+          <p class="proj-panel__title">DetectoVision &mdash; FPGA Vision Accelerator</p>
+          <p class="proj-panel__meta">Graduate Project &middot; 2024</p>
+          <p class="proj-panel__desc">Real-time FPGA-based vision accelerators (Sobel, Hough transform) with BRAM-optimized memory. Full EDA workflow: RTL, synthesis, floorplanning, timing closure.</p>
+          <p class="proj-panel__tags">FPGA &middot; Verilog &middot; RTL Design</p>
+          <div class="proj-panel__links">
+            <a href="https://github.com/abingeorge07" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel">
+        <div class="proj-panel__body">
+          <p class="proj-panel__title">Kernel-Driven Robotic Arm</p>
+          <p class="proj-panel__meta">Graduate Project &middot; 2024</p>
+          <p class="proj-panel__desc">Linux kernel-space device drivers enabling deterministic I/O and low-latency actuation for a robotic arm.</p>
+          <p class="proj-panel__tags">Linux Kernel &middot; Embedded Systems &middot; C</p>
+          <div class="proj-panel__links">
+            <a href="https://github.com/abingeorge07" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel">
+        <div class="proj-panel__body">
+          <p class="proj-panel__title">RL Cache Replacement Policy</p>
+          <p class="proj-panel__meta">Graduate Project &middot; 2024</p>
+          <p class="proj-panel__desc">Implemented and benchmarked Hawkeye and RL-based cache replacement policies in GEM5.</p>
+          <p class="proj-panel__tags">Computer Architecture &middot; GEM5</p>
+          <div class="proj-panel__links">
+            <a href="https://github.com/abingeorge07" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel">
+        <div class="proj-panel__body">
+          <p class="proj-panel__title">MicroFaaS on OpenFaaS</p>
+          <p class="proj-panel__meta">Undergraduate Research &middot; 2023</p>
+          <p class="proj-panel__desc">Embedded platform replacing x86 rack servers with ARM SBCs for serverless function execution. Published at IC2E &rsquo;23.</p>
+          <p class="proj-panel__tags">Cloud Computing &middot; Embedded Systems &middot; ARM</p>
+          <div class="proj-panel__links">
+            <a href="https://www.computer.org/csdl/proceedings-article/ic2e/2023/439400a230/1RR1jr3QcTe" target="_blank" rel="noopener">Paper</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <span>&copy; Abin Binoy George &middot; Boston University</span>
+    <a href="#top">Back to top &uarr;</a>
+  </footer>
+
+  <script>
+    (function() {
+      const btn = document.getElementById('theme-btn');
+      const icon = btn.querySelector('i');
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark');
+        icon.className = 'fas fa-sun';
+      }
+      btn.addEventListener('click', function() {
+        document.body.classList.toggle('dark');
+        const isDark = document.body.classList.contains('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+      });
+    })();
+  </script>
+
+</body>
+</html>
