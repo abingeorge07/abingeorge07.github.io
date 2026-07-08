@@ -644,7 +644,7 @@
     (function() {
       const btn = document.getElementById('theme-btn');
       const icon = btn.querySelector('i');
-      if (localStorage.getItem('theme') === 'dark') {
+      if (localStorage.getItem('theme') !== 'light') {
         document.body.classList.add('dark');
         icon.className = 'fas fa-sun';
       }
